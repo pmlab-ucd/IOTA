@@ -1,0 +1,486 @@
+1,"attackerDeviceAccess(arloBaseStation,rootPrivilege)","OR",0.0
+2,"RULE 53 (Exploit. The attacker launches exploit through the internet)","AND",1.0
+3,"vulExists(arloBaseStation,'CVE-2019-3949',network,rootPrivilege)","LEAF",1.0
+4,"attackerInitialAccess(internet)","LEAF",1.0
+5,"attackerDeviceAccess(arloPro,rootPrivilege)","OR",0.0
+6,"RULE 74 (Exploit. Use rooted device to inject wireless commands to devices on the same network)","AND",1.0
+7,"controls(arloBaseStation,arloPro)","LEAF",1.0
+8,"wifi(wifi2)","LEAF",1.0
+9,"inNetwork(arloPro,wifi2)","LEAF",1.0
+10,"attackerDeviceAccess(cacagooIPCamera1,rootPrivilege)","OR",0.0
+11,"RULE 53 (Exploit. The attacker launches exploit through the internet)","AND",1.0
+12,"vulExists(cacagooIPCamera1,'CVE-2020-6852',network,rootPrivilege)","LEAF",1.0
+13,"attackerDeviceAccess(cacagooIPCamera2,rootPrivilege)","OR",0.0
+14,"RULE 53 (Exploit. The attacker launches exploit through the internet)","AND",1.0
+15,"vulExists(cacagooIPCamera2,'CVE-2020-6852',network,rootPrivilege)","LEAF",1.0
+16,"attackerDeviceAccess(cacagooIPCamera3,rootPrivilege)","OR",0.0
+17,"RULE 53 (Exploit. The attacker launches exploit through the internet)","AND",1.0
+18,"vulExists(cacagooIPCamera3,'CVE-2020-6852',network,rootPrivilege)","LEAF",1.0
+19,"attackerDeviceAccess(cacagooIPCamera4,rootPrivilege)","OR",0.0
+20,"RULE 53 (Exploit. The attacker launches exploit through the internet)","AND",1.0
+21,"vulExists(cacagooIPCamera4,'CVE-2020-6852',network,rootPrivilege)","LEAF",1.0
+22,"attackerDeviceAccess(cacagooIPCamera5,rootPrivilege)","OR",0.0
+23,"RULE 53 (Exploit. The attacker launches exploit through the internet)","AND",1.0
+24,"vulExists(cacagooIPCamera5,'CVE-2020-6852',network,rootPrivilege)","LEAF",1.0
+25,"attackerDeviceAccess(dLinkRouter,rootPrivilege)","OR",0.0
+26,"RULE 61 (Exploit. The attacker on the wifi network launches exploit)","AND",1.0
+27,"vulExists(dLinkRouter,'CVE-2020-8864',wifiAdjacentLogically,rootPrivilege)","LEAF",1.0
+28,"wifi(wifi1)","LEAF",1.0
+29,"inNetwork(dLinkRouter,wifi1)","LEAF",1.0
+30,"attackerNetworkAccess(wifi1)","OR",0.0
+31,"RULE 60 (Exploit. The attacker launches exploit through the internet)","AND",1.0
+32,"vulExists(augustConnectWifiBridge,'CVE-2019-17098',wifiAdjacentPhysically,wifiAccess)","LEAF",1.0
+33,"attackerProximity(neighborhood)","LEAF",1.0
+34,"inNetwork(augustConnectWifiBridge,wifi1)","LEAF",1.0
+35,"RULE 67 (Exploit. Exploiting IoT device physically)","AND",0.3
+36,"vulExists(ringDoorbell,'CVE-2015-4400',physical,wifiAccess)","LEAF",1.0
+37,"inNetwork(ringDoorbell,wifi1)","LEAF",1.0
+38,"outdoor(ringDoorbell)","LEAF",1.0
+39,"attackerDeviceAccess(equesElfPlug,deviceControl)","OR",0.0
+40,"RULE 62 (Exploit. The attacker on the wifi network launches exploit)","AND",1.0
+41,"vulExists(equesElfPlug,'CVE-2019-15745',wifiAdjacentLogically,deviceControl)","LEAF",1.0
+42,"inNetwork(equesElfPlug,wifi1)","LEAF",1.0
+43,"RULE 73 (Exploit. Use rooted device to inject wireless commands to devices on the same network)","AND",1.0
+44,"inNetwork(arloBaseStation,wifi1)","LEAF",1.0
+45,"RULE 73 (Exploit. Use rooted device to inject wireless commands to devices on the same network)","AND",1.0
+46,"inNetwork(cacagooIPCamera1,wifi1)","LEAF",1.0
+47,"RULE 73 (Exploit. Use rooted device to inject wireless commands to devices on the same network)","AND",1.0
+48,"inNetwork(cacagooIPCamera2,wifi1)","LEAF",1.0
+49,"RULE 73 (Exploit. Use rooted device to inject wireless commands to devices on the same network)","AND",1.0
+50,"inNetwork(cacagooIPCamera3,wifi1)","LEAF",1.0
+51,"RULE 73 (Exploit. Use rooted device to inject wireless commands to devices on the same network)","AND",1.0
+52,"inNetwork(cacagooIPCamera4,wifi1)","LEAF",1.0
+53,"RULE 73 (Exploit. Use rooted device to inject wireless commands to devices on the same network)","AND",1.0
+54,"inNetwork(cacagooIPCamera5,wifi1)","LEAF",1.0
+55,"RULE 73 (Exploit. Use rooted device to inject wireless commands to devices on the same network)","AND",1.0
+56,"RULE 73 (Exploit. Use rooted device to inject wireless commands to devices on the same network)","AND",1.0
+57,"inNetwork(hpLaserJetPrinter,wifi1)","LEAF",1.0
+58,"attackerDeviceAccess(hpLaserJetPrinter,rootPrivilege)","OR",0.0
+59,"RULE 53 (Exploit. The attacker launches exploit through the internet)","AND",1.0
+60,"vulExists(hpLaserJetPrinter,'CVE-2011-4161',network,rootPrivilege)","LEAF",1.0
+61,"RULE 73 (Exploit. Use rooted device to inject wireless commands to devices on the same network)","AND",1.0
+62,"inNetwork(smartthingsHub,wifi1)","LEAF",1.0
+63,"attackerDeviceAccess(smartthingsHub,rootPrivilege)","OR",0.0
+64,"RULE 53 (Exploit. The attacker launches exploit through the internet)","AND",1.0
+65,"vulExists(smartthingsHub,'CVE-2018-3904',network,rootPrivilege)","LEAF",1.0
+66,"attackerDeviceAccess(hueWifiBulb1,deviceControl)","OR",0.0
+67,"RULE 55 (Exploit. The attacker launches exploit through the internet)","AND",1.0
+68,"vulExists(hueWifiBulb1,'CVE-2019-18980',network,deviceControl)","LEAF",1.0
+69,"attackerDeviceAccess(hueWifiBulb2,deviceControl)","OR",0.0
+70,"RULE 55 (Exploit. The attacker launches exploit through the internet)","AND",1.0
+71,"vulExists(hueWifiBulb2,'CVE-2019-18980',network,deviceControl)","LEAF",1.0
+72,"attackerDeviceAccess(hueWifiBulb3,deviceControl)","OR",0.0
+73,"RULE 55 (Exploit. The attacker launches exploit through the internet)","AND",1.0
+74,"vulExists(hueWifiBulb3,'CVE-2019-18980',network,deviceControl)","LEAF",1.0
+75,"attackerDeviceAccess(miPowerPlug1,deviceControl)","OR",0.0
+76,"RULE 66 (Exploit. The attacker physically adjacent to the zigbee network launches exploit)","AND",1.0
+77,"vulExists(miPowerPlug1,'CVE-2019-15913',zigbeeAdjacentPhysically,deviceControl)","LEAF",1.0
+78,"inNetwork(miPowerPlug1,zigbee2)","LEAF",1.0
+79,"zigbee(zigbee2)","LEAF",1.0
+80,"attackerDeviceAccess(miPowerPlug2,deviceControl)","OR",0.0
+81,"RULE 66 (Exploit. The attacker physically adjacent to the zigbee network launches exploit)","AND",1.0
+82,"vulExists(miPowerPlug2,'CVE-2019-15913',zigbeeAdjacentPhysically,deviceControl)","LEAF",1.0
+83,"inNetwork(miPowerPlug2,zigbee2)","LEAF",1.0
+84,"attackerDeviceAccess(miPowerPlug3,deviceControl)","OR",0.0
+85,"RULE 66 (Exploit. The attacker physically adjacent to the zigbee network launches exploit)","AND",1.0
+86,"vulExists(miPowerPlug3,'CVE-2019-15913',zigbeeAdjacentPhysically,deviceControl)","LEAF",1.0
+87,"inNetwork(miPowerPlug3,zigbee2)","LEAF",1.0
+88,"attackerDeviceAccess(miPowerPlug4,deviceControl)","OR",0.0
+89,"RULE 66 (Exploit. The attacker physically adjacent to the zigbee network launches exploit)","AND",1.0
+90,"vulExists(miPowerPlug4,'CVE-2019-15913',zigbeeAdjacentPhysically,deviceControl)","LEAF",1.0
+91,"inNetwork(miPowerPlug4,zigbee2)","LEAF",1.0
+92,"attackerDeviceAccess(miPowerPlug5,deviceControl)","OR",0.0
+93,"RULE 66 (Exploit. The attacker physically adjacent to the zigbee network launches exploit)","AND",1.0
+94,"vulExists(miPowerPlug5,'CVE-2019-15913',zigbeeAdjacentPhysically,deviceControl)","LEAF",1.0
+95,"inNetwork(miPowerPlug5,zigbee2)","LEAF",1.0
+96,"attackerDeviceAccess(mijiaMotionSensor,deviceControl)","OR",0.0
+97,"RULE 66 (Exploit. The attacker physically adjacent to the zigbee network launches exploit)","AND",1.0
+98,"vulExists(mijiaMotionSensor,'CVE-2019-15913',zigbeeAdjacentPhysically,deviceControl)","LEAF",1.0
+99,"inNetwork(mijiaMotionSensor,zigbee2)","LEAF",1.0
+100,"attackerDeviceAccess(mijiaSmartLightSensor1,deviceControl)","OR",0.0
+101,"RULE 66 (Exploit. The attacker physically adjacent to the zigbee network launches exploit)","AND",1.0
+102,"vulExists(mijiaSmartLightSensor1,'CVE-2019-15913',zigbeeAdjacentPhysically,deviceControl)","LEAF",1.0
+103,"inNetwork(mijiaSmartLightSensor1,zigbee2)","LEAF",1.0
+104,"attackerDeviceAccess(mijiaSmartLightSensor2,deviceControl)","OR",0.0
+105,"RULE 66 (Exploit. The attacker physically adjacent to the zigbee network launches exploit)","AND",1.0
+106,"vulExists(mijiaSmartLightSensor2,'CVE-2019-15913',zigbeeAdjacentPhysically,deviceControl)","LEAF",1.0
+107,"inNetwork(mijiaSmartLightSensor2,zigbee2)","LEAF",1.0
+108,"attackerDeviceAccess(mijiaSmartLightSensor3,deviceControl)","OR",0.0
+109,"RULE 66 (Exploit. The attacker physically adjacent to the zigbee network launches exploit)","AND",1.0
+110,"vulExists(mijiaSmartLightSensor3,'CVE-2019-15913',zigbeeAdjacentPhysically,deviceControl)","LEAF",1.0
+111,"inNetwork(mijiaSmartLightSensor3,zigbee2)","LEAF",1.0
+112,"attackerDeviceAccess(mijiaSmartMultiModeGateway,deviceControl)","OR",0.0
+113,"RULE 66 (Exploit. The attacker physically adjacent to the zigbee network launches exploit)","AND",1.0
+114,"vulExists(mijiaSmartMultiModeGateway,'CVE-2019-15913',zigbeeAdjacentPhysically,deviceControl)","LEAF",1.0
+115,"inNetwork(mijiaSmartMultiModeGateway,zigbee2)","LEAF",1.0
+116,"attackerDeviceAccess(nestCamIQIndoor,deviceControl)","OR",0.0
+117,"RULE 65 (Exploit. The attacker who is physically adjacent to the device launches exploit)","AND",1.0
+118,"vulExists(nestCamIQIndoor,'CVE-2019-5035',wifiAdjacentPhysically,deviceControl)","LEAF",1.0
+119,"attackerDeviceAccess(radioThermostat,deviceControl)","OR",0.0
+120,"RULE 62 (Exploit. The attacker on the wifi network launches exploit)","AND",1.0
+121,"vulExists(radioThermostat,'CVE-2018-11315',wifiAdjacentLogically,deviceControl)","LEAF",1.0
+122,"inNetwork(radioThermostat,wifi1)","LEAF",1.0
+123,"RULE 73 (Exploit. Use rooted device to inject wireless commands to devices on the same network)","AND",1.0
+124,"RULE 73 (Exploit. Use rooted device to inject wireless commands to devices on the same network)","AND",1.0
+125,"RULE 73 (Exploit. Use rooted device to inject wireless commands to devices on the same network)","AND",1.0
+126,"RULE 73 (Exploit. Use rooted device to inject wireless commands to devices on the same network)","AND",1.0
+127,"RULE 73 (Exploit. Use rooted device to inject wireless commands to devices on the same network)","AND",1.0
+128,"RULE 73 (Exploit. Use rooted device to inject wireless commands to devices on the same network)","AND",1.0
+129,"RULE 73 (Exploit. Use rooted device to inject wireless commands to devices on the same network)","AND",1.0
+130,"RULE 73 (Exploit. Use rooted device to inject wireless commands to devices on the same network)","AND",1.0
+131,"RULE 73 (Exploit. Use rooted device to inject wireless commands to devices on the same network)","AND",1.0
+132,"attackerDeviceAccess(ringDoorbell,eventAccess)","OR",0.0
+133,"RULE 64 (Exploit. The attacker on the wifi network launches exploit)","AND",1.0
+134,"vulExists(ringDoorbell,'CVE-2019-9483',wifiAdjacentLogically,eventAccess)","LEAF",1.0
+135,"attackerDeviceAccess(rokuTV,deviceControl)","OR",0.0
+136,"RULE 55 (Exploit. The attacker launches exploit through the internet)","AND",1.0
+137,"vulExists(rokuTV,'CVE-2018-11314',network,deviceControl)","LEAF",1.0
+138,"attackerDeviceAccess(smartThingsWaterLeakSensor,deviceControl)","OR",0.0
+139,"RULE 72 (Exploit. If the attacker roots the gateway then he can control the corresponding end devices)","AND",1.0
+140,"isGateway(smartthingsHub,smartThingsWaterLeakSensor)","LEAF",1.0
+141,"attackerDeviceAccess(smartthingsMotionSensor,deviceControl)","OR",0.0
+142,"RULE 72 (Exploit. If the attacker roots the gateway then he can control the corresponding end devices)","AND",1.0
+143,"isGateway(smartthingsHub,smartthingsMotionSensor)","LEAF",1.0
+144,"attackerDeviceAccess(smartthingsMotionSensor1,deviceControl)","OR",0.0
+145,"RULE 72 (Exploit. If the attacker roots the gateway then he can control the corresponding end devices)","AND",1.0
+146,"isGateway(smartthingsHub,smartthingsMotionSensor1)","LEAF",1.0
+147,"attackerDeviceAccess(smartthingsMotionSensor2,deviceControl)","OR",0.0
+148,"RULE 72 (Exploit. If the attacker roots the gateway then he can control the corresponding end devices)","AND",1.0
+149,"isGateway(smartthingsHub,smartthingsMotionSensor2)","LEAF",1.0
+150,"attackerDeviceAccess(smartthingsMultipurposeSensor2,deviceControl)","OR",0.0
+151,"RULE 72 (Exploit. If the attacker roots the gateway then he can control the corresponding end devices)","AND",1.0
+152,"isGateway(smartthingsHub,smartthingsMultipurposeSensor2)","LEAF",1.0
+153,"exists(smoke)","OR",0.0
+154,"RULE 20 (Actuator-Physical. Toaster triggers smoke)","AND",0.2
+155,"toaster(myToaster)","LEAF",1.0
+156,"on(myToaster)","OR",0.0
+157,"RULE 2 (Electricity. If smart plug is turned on then the toaster connected to it is also on)","AND",1.0
+158,"on(miPowerPlug5)","OR",0.0
+159,"RULE 106 (Exploit. Turn on a controlled outlet)","AND",1.0
+160,"outlet(miPowerPlug5)","LEAF",1.0
+161,"plugInto(myToaster,miPowerPlug5)","LEAF",1.0
+162,"high(illuminance)","OR",0.0
+163,"RULE 28 (Actuator-Physical. Smart bulb is on and it makes the illuminance high)","AND",1.0
+164,"bulb(hueWifiBulb1)","LEAF",1.0
+165,"on(hueWifiBulb1)","OR",0.0
+166,"RULE 34 (App 1. If the outdoor camera detects motion and the door is open then turn on the light.)","AND",1.0
+167,"doorContactSensor(smartthingsMultipurposeSensor2)","LEAF",1.0
+168,"open(smartthingsMultipurposeSensor2)","OR",0.0
+169,"camera(arloPro)","LEAF",1.0
+170,"outdoor(arloPro)","LEAF",1.0
+171,"reportsMotion(arloPro)","OR",0.0
+172,"RULE 75 (Exploit. Use rooted camera to send spoofed motion detected signal)","AND",1.0
+173,"RULE 35 (App 4. If motion is detected then turn on the light.)","AND",1.0
+174,"motionSensor(mijiaMotionSensor)","LEAF",1.0
+175,"reportsMotion(mijiaMotionSensor)","OR",0.0
+176,"RULE 103 (Exploit. Spoof motion event)","AND",1.0
+177,"RULE 35 (App 4. If motion is detected then turn on the light.)","AND",1.0
+178,"motionSensor(smartthingsMotionSensor1)","LEAF",1.0
+179,"reportsMotion(smartthingsMotionSensor1)","OR",0.0
+180,"RULE 103 (Exploit. Spoof motion event)","AND",1.0
+181,"RULE 35 (App 4. If motion is detected then turn on the light.)","AND",1.0
+182,"motionSensor(smartthingsMotionSensor2)","LEAF",1.0
+183,"reportsMotion(smartthingsMotionSensor2)","OR",0.0
+184,"RULE 103 (Exploit. Spoof motion event)","AND",1.0
+185,"RULE 44 (App 12. If the speaker receives turn on the light command then it turns on the light.)","AND",1.0
+186,"speaker(echoDot)","LEAF",1.0
+187,"receivesVoice(echoDot,'turn on the light')","OR",0.0
+188,"RULE 26 (Physical-Sensor. Speaker receives a voice command)","AND",1.0
+189,"voice('turn on the light')","OR",0.0
+190,"RULE 24 (Actuator-Physical. TV is on and it plays voice commands)","AND",0.1
+191,"tv(rokuTV)","LEAF",1.0
+192,"on(rokuTV)","OR",0.0
+193,"RULE 93 (Exploit. Turn on a controlled TV)","AND",1.0
+194,"RULE 70 (Exploit. The attacker can inject arbitrary voice to the environment)","AND",1.0
+195,"canInjectVoice(attacker)","OR",0.0
+196,"RULE 76 (Exploit. Use rooted indoor camera to inject voice to the environment)","AND",1.0
+197,"indoor(cacagooIPCamera1)","LEAF",1.0
+198,"camera(cacagooIPCamera1)","LEAF",1.0
+199,"RULE 76 (Exploit. Use rooted indoor camera to inject voice to the environment)","AND",1.0
+200,"indoor(cacagooIPCamera2)","LEAF",1.0
+201,"camera(cacagooIPCamera2)","LEAF",1.0
+202,"RULE 76 (Exploit. Use rooted indoor camera to inject voice to the environment)","AND",1.0
+203,"indoor(cacagooIPCamera3)","LEAF",1.0
+204,"camera(cacagooIPCamera3)","LEAF",1.0
+205,"RULE 76 (Exploit. Use rooted indoor camera to inject voice to the environment)","AND",1.0
+206,"indoor(cacagooIPCamera4)","LEAF",1.0
+207,"camera(cacagooIPCamera4)","LEAF",1.0
+208,"RULE 76 (Exploit. Use rooted indoor camera to inject voice to the environment)","AND",1.0
+209,"indoor(cacagooIPCamera5)","LEAF",1.0
+210,"camera(cacagooIPCamera5)","LEAF",1.0
+211,"RULE 77 (Exploit. Use rooted indoor camera to inject voice to the environment)","AND",1.0
+212,"indoor(nestCamIQIndoor)","LEAF",1.0
+213,"camera(nestCamIQIndoor)","LEAF",1.0
+214,"RULE 44 (App 12. If the speaker receives turn on the light command then it turns on the light.)","AND",1.0
+215,"speaker(googleHomeMini1)","LEAF",1.0
+216,"receivesVoice(googleHomeMini1,'turn on the light')","OR",0.0
+217,"RULE 26 (Physical-Sensor. Speaker receives a voice command)","AND",1.0
+218,"RULE 44 (App 12. If the speaker receives turn on the light command then it turns on the light.)","AND",1.0
+219,"speaker(googleHomeMini2)","LEAF",1.0
+220,"receivesVoice(googleHomeMini2,'turn on the light')","OR",0.0
+221,"RULE 26 (Physical-Sensor. Speaker receives a voice command)","AND",1.0
+222,"RULE 44 (App 12. If the speaker receives turn on the light command then it turns on the light.)","AND",1.0
+223,"speaker(googleHomeMini3)","LEAF",1.0
+224,"receivesVoice(googleHomeMini3,'turn on the light')","OR",0.0
+225,"RULE 26 (Physical-Sensor. Speaker receives a voice command)","AND",1.0
+226,"RULE 44 (App 12. If the speaker receives turn on the light command then it turns on the light.)","AND",1.0
+227,"speaker(googleHomeMini4)","LEAF",1.0
+228,"receivesVoice(googleHomeMini4,'turn on the light')","OR",0.0
+229,"RULE 26 (Physical-Sensor. Speaker receives a voice command)","AND",1.0
+230,"RULE 44 (App 12. If the speaker receives turn on the light command then it turns on the light.)","AND",1.0
+231,"speaker(googleHomeMini5)","LEAF",1.0
+232,"receivesVoice(googleHomeMini5,'turn on the light')","OR",0.0
+233,"RULE 26 (Physical-Sensor. Speaker receives a voice command)","AND",1.0
+234,"RULE 44 (App 12. If the speaker receives turn on the light command then it turns on the light.)","AND",1.0
+235,"speaker(sonosOneSpeaker)","LEAF",1.0
+236,"receivesVoice(sonosOneSpeaker,'turn on the light')","OR",0.0
+237,"RULE 26 (Physical-Sensor. Speaker receives a voice command)","AND",1.0
+238,"RULE 95 (Exploit. Turn on a controlled light bulb)","AND",1.0
+239,"RULE 28 (Actuator-Physical. Smart bulb is on and it makes the illuminance high)","AND",1.0
+240,"bulb(hueWifiBulb2)","LEAF",1.0
+241,"on(hueWifiBulb2)","OR",0.0
+242,"RULE 34 (App 1. If the outdoor camera detects motion and the door is open then turn on the light.)","AND",1.0
+243,"RULE 35 (App 4. If motion is detected then turn on the light.)","AND",1.0
+244,"RULE 35 (App 4. If motion is detected then turn on the light.)","AND",1.0
+245,"RULE 35 (App 4. If motion is detected then turn on the light.)","AND",1.0
+246,"RULE 44 (App 12. If the speaker receives turn on the light command then it turns on the light.)","AND",1.0
+247,"RULE 44 (App 12. If the speaker receives turn on the light command then it turns on the light.)","AND",1.0
+248,"RULE 44 (App 12. If the speaker receives turn on the light command then it turns on the light.)","AND",1.0
+249,"RULE 44 (App 12. If the speaker receives turn on the light command then it turns on the light.)","AND",1.0
+250,"RULE 44 (App 12. If the speaker receives turn on the light command then it turns on the light.)","AND",1.0
+251,"RULE 44 (App 12. If the speaker receives turn on the light command then it turns on the light.)","AND",1.0
+252,"RULE 44 (App 12. If the speaker receives turn on the light command then it turns on the light.)","AND",1.0
+253,"RULE 95 (Exploit. Turn on a controlled light bulb)","AND",1.0
+254,"RULE 28 (Actuator-Physical. Smart bulb is on and it makes the illuminance high)","AND",1.0
+255,"bulb(hueWifiBulb3)","LEAF",1.0
+256,"on(hueWifiBulb3)","OR",0.0
+257,"RULE 34 (App 1. If the outdoor camera detects motion and the door is open then turn on the light.)","AND",1.0
+258,"RULE 35 (App 4. If motion is detected then turn on the light.)","AND",1.0
+259,"RULE 35 (App 4. If motion is detected then turn on the light.)","AND",1.0
+260,"RULE 35 (App 4. If motion is detected then turn on the light.)","AND",1.0
+261,"RULE 44 (App 12. If the speaker receives turn on the light command then it turns on the light.)","AND",1.0
+262,"RULE 44 (App 12. If the speaker receives turn on the light command then it turns on the light.)","AND",1.0
+263,"RULE 44 (App 12. If the speaker receives turn on the light command then it turns on the light.)","AND",1.0
+264,"RULE 44 (App 12. If the speaker receives turn on the light command then it turns on the light.)","AND",1.0
+265,"RULE 44 (App 12. If the speaker receives turn on the light command then it turns on the light.)","AND",1.0
+266,"RULE 44 (App 12. If the speaker receives turn on the light command then it turns on the light.)","AND",1.0
+267,"RULE 44 (App 12. If the speaker receives turn on the light command then it turns on the light.)","AND",1.0
+268,"RULE 95 (Exploit. Turn on a controlled light bulb)","AND",1.0
+269,"RULE 30 (Actuator-Physical. TV is on and it can make the illuminance high)","AND",0.8
+270,"off(equesElfPlug)","OR",0.0
+271,"RULE 107 (Exploit. Turn off a controlled outlet)","AND",1.0
+272,"outlet(equesElfPlug)","LEAF",1.0
+273,"off(hueWifiBulb1)","OR",0.0
+274,"RULE 45 (App 13. If the speaker receives turn off the light command then it turns on the light.)","AND",1.0
+275,"receivesVoice(echoDot,'turn off the light')","OR",0.0
+276,"RULE 26 (Physical-Sensor. Speaker receives a voice command)","AND",1.0
+277,"voice('turn off the light')","OR",0.0
+278,"RULE 25 (Actuator-Physical. TV is on and it plays voice commands)","AND",0.1
+279,"RULE 71 (Exploit. The attacker can inject arbitrary voice to the environment)","AND",1.0
+280,"RULE 45 (App 13. If the speaker receives turn off the light command then it turns on the light.)","AND",1.0
+281,"receivesVoice(googleHomeMini1,'turn off the light')","OR",0.0
+282,"RULE 26 (Physical-Sensor. Speaker receives a voice command)","AND",1.0
+283,"RULE 45 (App 13. If the speaker receives turn off the light command then it turns on the light.)","AND",1.0
+284,"receivesVoice(googleHomeMini2,'turn off the light')","OR",0.0
+285,"RULE 26 (Physical-Sensor. Speaker receives a voice command)","AND",1.0
+286,"RULE 45 (App 13. If the speaker receives turn off the light command then it turns on the light.)","AND",1.0
+287,"receivesVoice(googleHomeMini3,'turn off the light')","OR",0.0
+288,"RULE 26 (Physical-Sensor. Speaker receives a voice command)","AND",1.0
+289,"RULE 45 (App 13. If the speaker receives turn off the light command then it turns on the light.)","AND",1.0
+290,"receivesVoice(googleHomeMini4,'turn off the light')","OR",0.0
+291,"RULE 26 (Physical-Sensor. Speaker receives a voice command)","AND",1.0
+292,"RULE 45 (App 13. If the speaker receives turn off the light command then it turns on the light.)","AND",1.0
+293,"receivesVoice(googleHomeMini5,'turn off the light')","OR",0.0
+294,"RULE 26 (Physical-Sensor. Speaker receives a voice command)","AND",1.0
+295,"RULE 45 (App 13. If the speaker receives turn off the light command then it turns on the light.)","AND",1.0
+296,"receivesVoice(sonosOneSpeaker,'turn off the light')","OR",0.0
+297,"RULE 26 (Physical-Sensor. Speaker receives a voice command)","AND",1.0
+298,"RULE 96 (Exploit. Turn off a controlled light bulb)","AND",1.0
+299,"off(hueWifiBulb2)","OR",0.0
+300,"RULE 45 (App 13. If the speaker receives turn off the light command then it turns on the light.)","AND",1.0
+301,"RULE 45 (App 13. If the speaker receives turn off the light command then it turns on the light.)","AND",1.0
+302,"RULE 45 (App 13. If the speaker receives turn off the light command then it turns on the light.)","AND",1.0
+303,"RULE 45 (App 13. If the speaker receives turn off the light command then it turns on the light.)","AND",1.0
+304,"RULE 45 (App 13. If the speaker receives turn off the light command then it turns on the light.)","AND",1.0
+305,"RULE 45 (App 13. If the speaker receives turn off the light command then it turns on the light.)","AND",1.0
+306,"RULE 45 (App 13. If the speaker receives turn off the light command then it turns on the light.)","AND",1.0
+307,"RULE 96 (Exploit. Turn off a controlled light bulb)","AND",1.0
+308,"off(hueWifiBulb3)","OR",0.0
+309,"RULE 45 (App 13. If the speaker receives turn off the light command then it turns on the light.)","AND",1.0
+310,"RULE 45 (App 13. If the speaker receives turn off the light command then it turns on the light.)","AND",1.0
+311,"RULE 45 (App 13. If the speaker receives turn off the light command then it turns on the light.)","AND",1.0
+312,"RULE 45 (App 13. If the speaker receives turn off the light command then it turns on the light.)","AND",1.0
+313,"RULE 45 (App 13. If the speaker receives turn off the light command then it turns on the light.)","AND",1.0
+314,"RULE 45 (App 13. If the speaker receives turn off the light command then it turns on the light.)","AND",1.0
+315,"RULE 45 (App 13. If the speaker receives turn off the light command then it turns on the light.)","AND",1.0
+316,"RULE 96 (Exploit. Turn off a controlled light bulb)","AND",1.0
+317,"off(miPowerPlug1)","OR",0.0
+318,"RULE 107 (Exploit. Turn off a controlled outlet)","AND",1.0
+319,"outlet(miPowerPlug1)","LEAF",1.0
+320,"off(miPowerPlug2)","OR",0.0
+321,"RULE 107 (Exploit. Turn off a controlled outlet)","AND",1.0
+322,"outlet(miPowerPlug2)","LEAF",1.0
+323,"off(miPowerPlug3)","OR",0.0
+324,"RULE 107 (Exploit. Turn off a controlled outlet)","AND",1.0
+325,"outlet(miPowerPlug3)","LEAF",1.0
+326,"off(miPowerPlug4)","OR",0.0
+327,"RULE 107 (Exploit. Turn off a controlled outlet)","AND",1.0
+328,"outlet(miPowerPlug4)","LEAF",1.0
+329,"off(miPowerPlug5)","OR",0.0
+330,"RULE 107 (Exploit. Turn off a controlled outlet)","AND",1.0
+331,"off(myCoffeeMachine)","OR",0.0
+332,"RULE 1 (Electricity. If smart plug is turned off then any device connected to it is also off)","AND",1.0
+333,"plugInto(myCoffeeMachine,miPowerPlug3)","LEAF",1.0
+334,"off(myHumidifier)","OR",0.0
+335,"RULE 1 (Electricity. If smart plug is turned off then any device connected to it is also off)","AND",1.0
+336,"plugInto(myHumidifier,equesElfPlug)","LEAF",1.0
+337,"off(myToaster)","OR",0.0
+338,"RULE 1 (Electricity. If smart plug is turned off then any device connected to it is also off)","AND",1.0
+339,"off(proscenicHumidifier)","OR",0.0
+340,"RULE 1 (Electricity. If smart plug is turned off then any device connected to it is also off)","AND",1.0
+341,"plugInto(proscenicHumidifier,miPowerPlug4)","LEAF",1.0
+342,"off(rokuTV)","OR",0.0
+343,"RULE 94 (Exploit. Turn off a controlled TV)","AND",1.0
+344,"on(myAlarm)","OR",0.0
+345,"RULE 36 (App 5. If there is smoke then turn on the alarm.)","AND",1.0
+346,"smokeDetector(nestProtect)","LEAF",1.0
+347,"reportsSmoke(nestProtect)","OR",0.0
+348,"RULE 21 (Physical-Sensor. Smoke detector reports smoke when there is smoke)","AND",1.0
+349,"alarm(myAlarm)","LEAF",1.0
+350,"open(_)","OR",0.0
+351,"RULE 41 (App 9. If the alarm is on and the user is at home then open the window.)","AND",1.0
+352,"RULE 41 (App 9. If the alarm is on and the user is at home then open the window.)","AND",1.0
+353,"RULE 41 (App 9. If the alarm is on and the user is at home then open the window.)","AND",1.0
+354,"receivesVoice(cacagooIPCamera1,'open the door')","OR",0.0
+355,"RULE 27 (Physical-Sensor. Indoor camera receives a voice command)","AND",1.0
+356,"voice('open the door')","OR",0.0
+357,"RULE 23 (Actuator-Physical. TV is on and it plays voice commands)","AND",0.1
+358,"RULE 69 (Exploit. The attacker can inject arbitrary voice to the environment)","AND",1.0
+359,"receivesVoice(cacagooIPCamera1,'open the window')","OR",0.0
+360,"RULE 27 (Physical-Sensor. Indoor camera receives a voice command)","AND",1.0
+361,"voice('open the window')","OR",0.0
+362,"RULE 22 (Actuator-Physical. TV is on and it plays voice commands)","AND",0.1
+363,"RULE 68 (Exploit. The attacker can inject arbitrary voice to the environment)","AND",1.0
+364,"receivesVoice(cacagooIPCamera1,'turn off the light')","OR",0.0
+365,"RULE 27 (Physical-Sensor. Indoor camera receives a voice command)","AND",1.0
+366,"receivesVoice(cacagooIPCamera1,'turn on the light')","OR",0.0
+367,"RULE 27 (Physical-Sensor. Indoor camera receives a voice command)","AND",1.0
+368,"receivesVoice(cacagooIPCamera2,'open the door')","OR",0.0
+369,"RULE 27 (Physical-Sensor. Indoor camera receives a voice command)","AND",1.0
+370,"receivesVoice(cacagooIPCamera2,'open the window')","OR",0.0
+371,"RULE 27 (Physical-Sensor. Indoor camera receives a voice command)","AND",1.0
+372,"receivesVoice(cacagooIPCamera2,'turn off the light')","OR",0.0
+373,"RULE 27 (Physical-Sensor. Indoor camera receives a voice command)","AND",1.0
+374,"receivesVoice(cacagooIPCamera2,'turn on the light')","OR",0.0
+375,"RULE 27 (Physical-Sensor. Indoor camera receives a voice command)","AND",1.0
+376,"receivesVoice(cacagooIPCamera3,'open the door')","OR",0.0
+377,"RULE 27 (Physical-Sensor. Indoor camera receives a voice command)","AND",1.0
+378,"receivesVoice(cacagooIPCamera3,'open the window')","OR",0.0
+379,"RULE 27 (Physical-Sensor. Indoor camera receives a voice command)","AND",1.0
+380,"receivesVoice(cacagooIPCamera3,'turn off the light')","OR",0.0
+381,"RULE 27 (Physical-Sensor. Indoor camera receives a voice command)","AND",1.0
+382,"receivesVoice(cacagooIPCamera3,'turn on the light')","OR",0.0
+383,"RULE 27 (Physical-Sensor. Indoor camera receives a voice command)","AND",1.0
+384,"receivesVoice(cacagooIPCamera4,'open the door')","OR",0.0
+385,"RULE 27 (Physical-Sensor. Indoor camera receives a voice command)","AND",1.0
+386,"receivesVoice(cacagooIPCamera4,'open the window')","OR",0.0
+387,"RULE 27 (Physical-Sensor. Indoor camera receives a voice command)","AND",1.0
+388,"receivesVoice(cacagooIPCamera4,'turn off the light')","OR",0.0
+389,"RULE 27 (Physical-Sensor. Indoor camera receives a voice command)","AND",1.0
+390,"receivesVoice(cacagooIPCamera4,'turn on the light')","OR",0.0
+391,"RULE 27 (Physical-Sensor. Indoor camera receives a voice command)","AND",1.0
+392,"receivesVoice(cacagooIPCamera5,'open the door')","OR",0.0
+393,"RULE 27 (Physical-Sensor. Indoor camera receives a voice command)","AND",1.0
+394,"receivesVoice(cacagooIPCamera5,'open the window')","OR",0.0
+395,"RULE 27 (Physical-Sensor. Indoor camera receives a voice command)","AND",1.0
+396,"receivesVoice(cacagooIPCamera5,'turn off the light')","OR",0.0
+397,"RULE 27 (Physical-Sensor. Indoor camera receives a voice command)","AND",1.0
+398,"receivesVoice(cacagooIPCamera5,'turn on the light')","OR",0.0
+399,"RULE 27 (Physical-Sensor. Indoor camera receives a voice command)","AND",1.0
+400,"receivesVoice(echoDot,'open the door')","OR",0.0
+401,"RULE 26 (Physical-Sensor. Speaker receives a voice command)","AND",1.0
+402,"receivesVoice(echoDot,'open the window')","OR",0.0
+403,"RULE 26 (Physical-Sensor. Speaker receives a voice command)","AND",1.0
+404,"receivesVoice(googleHomeMini1,'open the door')","OR",0.0
+405,"RULE 26 (Physical-Sensor. Speaker receives a voice command)","AND",1.0
+406,"receivesVoice(googleHomeMini1,'open the window')","OR",0.0
+407,"RULE 26 (Physical-Sensor. Speaker receives a voice command)","AND",1.0
+408,"receivesVoice(googleHomeMini2,'open the door')","OR",0.0
+409,"RULE 26 (Physical-Sensor. Speaker receives a voice command)","AND",1.0
+410,"receivesVoice(googleHomeMini2,'open the window')","OR",0.0
+411,"RULE 26 (Physical-Sensor. Speaker receives a voice command)","AND",1.0
+412,"receivesVoice(googleHomeMini3,'open the door')","OR",0.0
+413,"RULE 26 (Physical-Sensor. Speaker receives a voice command)","AND",1.0
+414,"receivesVoice(googleHomeMini3,'open the window')","OR",0.0
+415,"RULE 26 (Physical-Sensor. Speaker receives a voice command)","AND",1.0
+416,"receivesVoice(googleHomeMini4,'open the door')","OR",0.0
+417,"RULE 26 (Physical-Sensor. Speaker receives a voice command)","AND",1.0
+418,"receivesVoice(googleHomeMini4,'open the window')","OR",0.0
+419,"RULE 26 (Physical-Sensor. Speaker receives a voice command)","AND",1.0
+420,"receivesVoice(googleHomeMini5,'open the door')","OR",0.0
+421,"RULE 26 (Physical-Sensor. Speaker receives a voice command)","AND",1.0
+422,"receivesVoice(googleHomeMini5,'open the window')","OR",0.0
+423,"RULE 26 (Physical-Sensor. Speaker receives a voice command)","AND",1.0
+424,"receivesVoice(nestCamIQIndoor,'open the door')","OR",0.0
+425,"RULE 27 (Physical-Sensor. Indoor camera receives a voice command)","AND",1.0
+426,"receivesVoice(nestCamIQIndoor,'open the window')","OR",0.0
+427,"RULE 27 (Physical-Sensor. Indoor camera receives a voice command)","AND",1.0
+428,"receivesVoice(nestCamIQIndoor,'turn off the light')","OR",0.0
+429,"RULE 27 (Physical-Sensor. Indoor camera receives a voice command)","AND",1.0
+430,"receivesVoice(nestCamIQIndoor,'turn on the light')","OR",0.0
+431,"RULE 27 (Physical-Sensor. Indoor camera receives a voice command)","AND",1.0
+432,"receivesVoice(sonosOneSpeaker,'open the door')","OR",0.0
+433,"RULE 26 (Physical-Sensor. Speaker receives a voice command)","AND",1.0
+434,"receivesVoice(sonosOneSpeaker,'open the window')","OR",0.0
+435,"RULE 26 (Physical-Sensor. Speaker receives a voice command)","AND",1.0
+436,"reportsClosed(smartthingsMultipurposeSensor2)","OR",0.0
+437,"RULE 102 (Exploit. Spoof door closed event)","AND",1.0
+438,"reportsHigh(mijiaSmartLightSensor1,illuminance)","OR",0.0
+439,"RULE 111 (Exploit. Spoof illuminance high event)","AND",1.0
+440,"lightSensor(mijiaSmartLightSensor1)","LEAF",1.0
+441,"RULE 31 (Physical-Sensor. Light sensor reports high illuminance)","AND",1.0
+442,"reportsHigh(mijiaSmartLightSensor2,illuminance)","OR",0.0
+443,"RULE 111 (Exploit. Spoof illuminance high event)","AND",1.0
+444,"lightSensor(mijiaSmartLightSensor2)","LEAF",1.0
+445,"RULE 31 (Physical-Sensor. Light sensor reports high illuminance)","AND",1.0
+446,"reportsHigh(mijiaSmartLightSensor3,illuminance)","OR",0.0
+447,"RULE 111 (Exploit. Spoof illuminance high event)","AND",1.0
+448,"lightSensor(mijiaSmartLightSensor3)","LEAF",1.0
+449,"RULE 31 (Physical-Sensor. Light sensor reports high illuminance)","AND",1.0
+450,"reportsHigh(smartthingsMotionSensor,temperature)","OR",0.0
+451,"RULE 104 (Exploit. Spoof temperature high event)","AND",1.0
+452,"temperatureSensor(smartthingsMotionSensor)","LEAF",1.0
+453,"reportsLow(mijiaSmartLightSensor1,illuminance)","OR",0.0
+454,"RULE 112 (Exploit. Spoof illuminance low event)","AND",1.0
+455,"reportsLow(mijiaSmartLightSensor2,illuminance)","OR",0.0
+456,"RULE 112 (Exploit. Spoof illuminance low event)","AND",1.0
+457,"reportsLow(mijiaSmartLightSensor3,illuminance)","OR",0.0
+458,"RULE 112 (Exploit. Spoof illuminance low event)","AND",1.0
+459,"reportsLow(smartthingsMotionSensor,temperature)","OR",0.0
+460,"RULE 105 (Exploit. Spoof temperature low event)","AND",1.0
+461,"reportsMotion(cacagooIPCamera1)","OR",0.0
+462,"RULE 75 (Exploit. Use rooted camera to send spoofed motion detected signal)","AND",1.0
+463,"reportsMotion(cacagooIPCamera2)","OR",0.0
+464,"RULE 75 (Exploit. Use rooted camera to send spoofed motion detected signal)","AND",1.0
+465,"reportsMotion(cacagooIPCamera3)","OR",0.0
+466,"RULE 75 (Exploit. Use rooted camera to send spoofed motion detected signal)","AND",1.0
+467,"reportsMotion(cacagooIPCamera4)","OR",0.0
+468,"RULE 75 (Exploit. Use rooted camera to send spoofed motion detected signal)","AND",1.0
+469,"reportsMotion(cacagooIPCamera5)","OR",0.0
+470,"RULE 75 (Exploit. Use rooted camera to send spoofed motion detected signal)","AND",1.0
+471,"reportsMotion(nestCamIQIndoor)","OR",0.0
+472,"RULE 78 (Exploit. Use rooted camera to send spoofed motion detected signal)","AND",1.0
+473,"reportsOpen(smartthingsMultipurposeSensor2)","OR",0.0
+474,"RULE 101 (Exploit. Spoof door open event)","AND",1.0
+475,"reportsWater(smartThingsWaterLeakSensor)","OR",0.0
+476,"RULE 110 (Exploit. Spoof water leakage event)","AND",1.0
+477,"waterSensor(smartThingsWaterLeakSensor)","LEAF",1.0
+478,"unlocked(augustDoorLock)","OR",0.0
+479,"RULE 43 (App 11. If the speaker receives open the door command then it unlocks the doorlock.)","AND",1.0
+480,"doorLock(augustDoorLock)","LEAF",1.0
+481,"RULE 43 (App 11. If the speaker receives open the door command then it unlocks the doorlock.)","AND",1.0
+482,"RULE 43 (App 11. If the speaker receives open the door command then it unlocks the doorlock.)","AND",1.0
+483,"RULE 43 (App 11. If the speaker receives open the door command then it unlocks the doorlock.)","AND",1.0
+484,"RULE 43 (App 11. If the speaker receives open the door command then it unlocks the doorlock.)","AND",1.0
+485,"RULE 43 (App 11. If the speaker receives open the door command then it unlocks the doorlock.)","AND",1.0
+486,"RULE 43 (App 11. If the speaker receives open the door command then it unlocks the doorlock.)","AND",1.0

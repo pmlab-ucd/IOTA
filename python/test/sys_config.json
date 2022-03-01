@@ -1,0 +1,65 @@
+{
+	"devices": [
+        {
+			"name": "D-Link Router",
+			"type": "router",
+			"network": ["wifi1"]
+		},
+		{
+			"name": "Hue Wifi Bulb",
+			"type": "bulb",
+			"network": ["wifi1"]
+		},
+		{
+			"name": "Smartthings Motion Sensor",
+			"type": "motion sensor",
+			"network": ["zigbee1"]
+		},
+		{
+			"name": "Arlo Pro",
+			"type": "camera",
+			"network": ["wifi1"],
+			"outdoor": true
+		},
+		{
+			"name": "Smartthings Multipurpose Sensor 2",
+			"type": "door contact sensor",
+			"network": ["zigbee1"]
+		},
+		{
+			"name": "Smartthings Hub",
+			"type": "gateway",
+			"network": ["wifi1", "zigbee1"]
+		},
+		{
+			"name": "Mijia Smart Multi-Mode Gateway",
+			"type": "gateway",
+			"network": ["wifi1", "zigbee2"]
+		},
+		{
+			"name": "Mi Power Plug 1",
+			"type": "outlet",
+			"network": ["zigbee2"]
+		},
+		{
+			"name": "Toshiba AC",
+			"type": "ac",
+			"network": [],
+			"plug into": "Mi Power Plug 1"
+		}
+	],
+	"networks": [
+        {
+		    "name": "wifi1",
+			"type": "Wifi"
+		},
+		{
+			"name": "zigbee1",
+			"type": "Zigbee"
+		},
+		{
+			"name": "zigbee2",
+			"type": "Zigbee"
+		}
+    ]
+}

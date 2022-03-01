@@ -1,0 +1,13 @@
+{
+    "apps": [
+        {
+            "App name": "Light on when I come home",
+            "description": "Turn on the hall light if there is motion and the door opens.",
+            "device map": {
+                "bulb": "Hue Wifi Bulb",
+                "door contact sensor": "Smartthings Multipurpose Sensor 2",
+                "motion sensor": "Smartthings Motion Sensor"
+            }
+        }
+    ]
+}
